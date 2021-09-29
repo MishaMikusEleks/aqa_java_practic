@@ -1,4 +1,4 @@
-package practic.collection;
+package practice.collection;
 
 import java.util.*;
 

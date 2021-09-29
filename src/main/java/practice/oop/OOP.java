@@ -1,4 +1,4 @@
-package practic.oop;
+package practice.oop;
 
 import java.util.*;
 

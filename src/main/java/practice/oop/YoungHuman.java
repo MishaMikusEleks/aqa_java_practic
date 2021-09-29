@@ -1,4 +1,4 @@
-package practic.oop;
+package practice.oop;
 
 public class YoungHuman extends Human implements Etable{
     private String food;

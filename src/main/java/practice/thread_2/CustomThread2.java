@@ -1,4 +1,4 @@
-package practic.thread_2;
+package practice.thread_2;
 
 public class CustomThread2 implements Runnable{
     @Override

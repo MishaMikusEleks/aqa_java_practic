@@ -1,4 +1,4 @@
-package practic.hw;
+package practice.hw;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
-package practic.reflection;
+package practice.oop;
 
-public class Animal{
+public class Animal implements Etable {
     private int age;
     private String name;
 
@@ -28,4 +28,8 @@ public class Animal{
                 '}';
     }
 
-   }
+    @Override
+    public void eat(String food) {
+        System.out.println("Animal " +name+" eat "+food);
+    }
+}

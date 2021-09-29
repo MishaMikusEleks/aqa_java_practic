@@ -1,4 +1,4 @@
-package practic.oop;
+package practice.oop;
 
 public abstract class Human implements Etable{
     private int age;

@@ -1,4 +1,4 @@
-package practic.thread_2;
+package practice.thread_2;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

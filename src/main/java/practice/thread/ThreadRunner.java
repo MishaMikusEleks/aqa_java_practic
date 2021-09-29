@@ -1,4 +1,4 @@
-package practic.thread;
+package practice.thread;
 
 public class ThreadRunner {
     public static void main(String[] args) {
