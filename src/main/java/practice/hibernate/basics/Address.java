@@ -1,7 +1,12 @@
-package practice.hibernate.model;
+package practice.hibernate.basics;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
 //    `id` int(11) NOT NULL AUTO_INCREMENT,
+    @Id
     private Long id;
 //                           `county` varchar(45) DEFAULT NULL,
     private String county;
@@ -40,5 +45,15 @@ public class Address {
 
     public void setStreet(String street) {
         this.street = street;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", county='" + county + '\'' +
+                ", city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                '}';
     }
 }

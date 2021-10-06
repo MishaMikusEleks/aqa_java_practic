@@ -1,10 +1,11 @@
-package practice.hibernate.model;
+package practice.hibernate.annotations.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements Serializable {
 //   `id` int(11) NOT NULL AUTO_INCREMENT,
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,5 +49,15 @@ public class Student {
 
     public Integer getAge() {
         return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                ", age=" + age +
+                '}';
     }
 }

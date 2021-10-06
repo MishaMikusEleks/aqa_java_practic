@@ -1,8 +1,7 @@
-package practice.hibernate;
+package practice.hibernate.basics;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import practice.hibernate.model.Student;
 
 public class HibernateTest {
     public static void main(String[] args) {
@@ -17,10 +16,9 @@ public class HibernateTest {
         //start transaction
         session.beginTransaction();
         //Save the Model object
-        session.save(student);
+        System.out.println("student ID="+session.save(student));
         //Commit transaction
         session.getTransaction().commit();
-        System.out.println("student ID="+student.getId());
 
         //terminate session factory, otherwise program won't end
         sessionFactory.close();

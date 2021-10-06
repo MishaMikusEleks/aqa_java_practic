@@ -1,4 +1,4 @@
-package practice.hibernate;
+package practice;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -42,8 +42,4 @@ public class PropertyUtil {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new PropertyUtil()
-                .getProperty("hibernate.connection.username"));
-    }
 }

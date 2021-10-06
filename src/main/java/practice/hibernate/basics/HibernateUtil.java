@@ -1,13 +1,14 @@
-package practice.hibernate;
+package practice.hibernate.basics;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-import practice.hibernate.model.Address;
-import practice.hibernate.model.Student;
+import practice.PropertyUtil;
+import practice.hibernate.basics.Address;
+import practice.hibernate.basics.Student;
 
-import java.util.Properties;
+import java.util.*;
 
 public class HibernateUtil {
     SessionFactory sessionFactory;
