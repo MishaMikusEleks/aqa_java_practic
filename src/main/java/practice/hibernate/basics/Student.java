@@ -8,54 +8,58 @@ public class Student {
 //   `id` int(11) NOT NULL AUTO_INCREMENT,
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer student_id;
 
 //                           `name` varchar(45) DEFAULT NULL,
     private String name;
 //                           `address` int(11) DEFAULT NULL,
 
-    private Integer address;
+    private Integer address_id;
 //                           `age` int(11) DEFAULT NULL,
     private Integer age;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setAddress(Integer address) {
-        this.address = address;
-    }
 
     public void setAge(Integer age) {
         this.age = age;
     }
 
-    public Long getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
     }
 
-    public Integer getAddress() {
-        return address;
-    }
 
     public Integer getAge() {
         return age;
     }
 
+    public Integer getStudent_id() {
+        return student_id;
+    }
+
+    public void setStudent_id(Integer student_id) {
+        this.student_id = student_id;
+    }
+
+    public Integer getAddress_id() {
+        return address_id;
+    }
+
+    public void setAddress_id(Integer address_id) {
+        this.address_id = address_id;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
-                "id=" + id +
+                "student_id=" + student_id +
                 ", name='" + name + '\'' +
-                ", address=" + address +
+                ", address_id=" + address_id +
                 ", age=" + age +
                 '}';
     }

@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Address {
 //    `id` int(11) NOT NULL AUTO_INCREMENT,
     @Id
-    private Long id;
+    private Long address_id;
 //                           `county` varchar(45) DEFAULT NULL,
     private String county;
 //                           `city` varchar(45) DEFAULT NULL,
@@ -15,12 +15,12 @@ public class Address {
 //                           `street` varchar(45) DEFAULT NULL,
     private String street;
 
-    public Long getId() {
-        return id;
+    public Long getAddress_id() {
+        return address_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setAddress_id(Long address_id) {
+        this.address_id = address_id;
     }
 
     public String getCounty() {
@@ -50,7 +50,7 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "id=" + id +
+                "address_id=" + address_id +
                 ", county='" + county + '\'' +
                 ", city='" + city + '\'' +
                 ", street='" + street + '\'' +

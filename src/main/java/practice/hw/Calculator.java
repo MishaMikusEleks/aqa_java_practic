@@ -38,7 +38,7 @@ public class Calculator {
         return console.nextLine();
     }
 
-    static double addition(String st1, String st2) {
+    public static double addition(String st1, String st2) {
         double d1 = Double.parseDouble(st1);
         double d2 = Double.parseDouble(st2);
         return d1 + d2;

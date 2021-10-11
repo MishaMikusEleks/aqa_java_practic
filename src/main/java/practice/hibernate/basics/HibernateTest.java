@@ -8,7 +8,7 @@ public class HibernateTest {
         Student student = new Student();
         student.setName("Lisa");
         student.setAge(1);
-        student.setAddress(1);
+        student.setAddress_id(1);
 
         //Get Session
         SessionFactory sessionFactory = new HibernateUtil().getSessionFactory();

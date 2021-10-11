@@ -11,14 +11,18 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+
+        <testng.version>7.0.0</testng.version>
+        <json.version>20210307</json.version>
     </properties>
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/org.json/json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>20210307</version>
+            <version>${json.version}</version>
         </dependency>
 
         <dependency>
@@ -30,7 +34,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <version>4.3.5.Final</version>
+            <version>5.5.6</version>
         </dependency>
         <!-- Hibernate 4 uses Jboss logging, but older versions slf4j for logging -->
         <dependency>
@@ -45,6 +49,11 @@
             <version>8.0.26</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+        </dependency>
 
     </dependencies>
 
