@@ -2,7 +2,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-import static org.testng.Assert.assertTrue;
 import static practice.hw.Calculator.addition;
 
 public class MyTestClass {
