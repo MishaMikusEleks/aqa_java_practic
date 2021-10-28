@@ -2,7 +2,6 @@ package practice.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import io.github.bonigarcia.wdm.managers.FirefoxDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,9 +12,9 @@ import practice.PropertyUtil;
 
 public class Driver {
 
-    private static final Driver DRIVER=new Driver();
+    private static final Driver DRIVER = new Driver();
 
-    public static Driver getInstance(){
+    public static Driver getInstance() {
         return DRIVER;
     }
 
@@ -24,34 +23,29 @@ public class Driver {
 
     public WebDriver getDriver() {
         String browser = (String) new PropertyUtil().getProperty("browser");
-        if(webDriver==null){
-        switch (browser) {
-            case "chrome" -> {
-                ChromeDriverManager.getInstance().setup();
-                webDriver = new ChromeDriver();
+        if (webDriver == null) {
+            switch (browser) {
+                case "chrome" -> {
+                    ChromeDriverManager.getInstance().setup();
+                    webDriver = new ChromeDriver();
+                }
+                case "firefox" -> {
+                    WebDriverManager.firefoxdriver().setup();
+                    webDriver = new FirefoxDriver();
+                }
+                default -> throw new RuntimeException("invalid browser " + browser);
             }
-            case "firefox" -> {
-                WebDriverManager.firefoxdriver().setup();
-                webDriver= new FirefoxDriver();
-            }
-            default -> throw new RuntimeException("invalid browser " + browser);
-        }}
-return webDriver;
+        }
+        return webDriver;
     }
 
     public static void main(String[] args) {
-
-        WebDriver driver= Driver.getInstance().getDriver();
-        JavascriptExecutor executor= (JavascriptExecutor) driver;
-
+        WebDriver driver = Driver.getInstance().getDriver();
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
         driver.get("https://stackoverflow.com/");
-
         System.out.println(executor.executeScript("return document.readyState"));
-
-        WebElement searchInput=driver.findElement(By.xpath("//*[@id=\"search\"]/div/input"));
-
-        executor.executeScript("arguments[0].click()",searchInput);
-
+        WebElement searchInput = driver.findElement(By.xpath("//*[@id=\"search\"]/div/input"));
+        executor.executeScript("arguments[0].click()", searchInput);
         driver.quit();
     }
 }

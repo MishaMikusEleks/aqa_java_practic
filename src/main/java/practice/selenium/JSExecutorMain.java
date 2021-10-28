@@ -1,11 +1,9 @@
 package practice.selenium;
 
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.File;
 import java.io.IOException;
 
 public class JSExecutorMain {
@@ -21,10 +19,9 @@ public class JSExecutorMain {
 
         WebElement loginButton=driver.findElement(By.linkText("Log in"));
 
-
         executor.executeScript("arguments[0].click()",loginButton);
 
-                driver.quit();
+        driver.quit();
     }
 
 }

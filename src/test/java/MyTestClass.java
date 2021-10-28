@@ -1,8 +1,8 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-
 import static practice.hw.Calculator.addition;
+
 
 public class MyTestClass {
 
