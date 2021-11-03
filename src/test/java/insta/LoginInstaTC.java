@@ -1,11 +1,13 @@
 package insta;
 
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import practice.PropertyUtil;
 import practice.selenium.insta.bo.LoginBO;
 
-public class LoginInstaTC {
+
+public class LoginInstaTC extends BaseTest{
 
     @Test
     public void loginTest() {

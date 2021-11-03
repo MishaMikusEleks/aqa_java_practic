@@ -1,27 +1,15 @@
 package practice.selenium.insta.page_factory.po;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import practice.selenium.parallel_run.BrowserFactory;
+import practice.selenium.decorator.ButtonElement;
 
-public class HomePO {
+public class HomePO extends BasicPO{
 
-    @FindBy(xpath = "//*[@name='username']")
-    private WebElement userLogo;
+    @FindBy(xpath = "//*[@data-testid=\"user-avatar\"]")
+    private ButtonElement userLogo;
 
-    public HomePO() {
-        PageFactory.initElements(BrowserFactory.getDriver(),this);
-    }
-
+        @Override
     public boolean isOpen() {
-        //return userLogo.isDisplayed();
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return BrowserFactory.getDriver().getCurrentUrl()
-                .equals("https://www.instagram.com/accounts/onetap/?next=%2F");
+        return userLogo.waitForMeVisible(10000);
     }
 }

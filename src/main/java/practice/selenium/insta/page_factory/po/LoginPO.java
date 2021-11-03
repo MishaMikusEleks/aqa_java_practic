@@ -1,39 +1,32 @@
 package practice.selenium.insta.page_factory.po;
 
-import com.mysql.cj.log.Log;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import practice.selenium.decorator.ButtonElement;
+import practice.selenium.decorator.CustomDecorator;
+import practice.selenium.decorator.InputElement;
 import practice.selenium.parallel_run.BrowserFactory;
 
-import java.time.Duration;
 
-public class LoginPO {
+public class LoginPO extends BasicPO{
 
     @FindBy(xpath = "//*[@name='username']")
-    private WebElement loginInput;
+    private InputElement loginInput;
 
     @FindBy(xpath = "//*[@name='password']")
-    private WebElement passInput;
+    private InputElement passInput;
 
     @FindBy(xpath = "//*[@type='submit']")
-    private WebElement submitButton;
+    private ButtonElement submitButton;
 
-    public LoginPO() {
-        PageFactory.initElements(BrowserFactory.getDriver(),this);
+
+@Override
+    public boolean isOpen() {
+        return loginInput.waitForMeVisible(5000);
     }
 
     public LoginPO inputLogin(String login) {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         loginInput.sendKeys(login);
         return this;
     }
