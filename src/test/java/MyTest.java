@@ -1,10 +1,14 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import practice.test_helper.BaseTest;
 
 import static practice.hw.Calculator.addition;
 
 
-public class MyTestClass {
+@Test
+public class MyTest
+       // extends BaseTest
+{
 
     @Test(groups = "group1")
     public void firstTest() {

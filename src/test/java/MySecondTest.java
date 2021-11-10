@@ -3,13 +3,16 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import practice.test_helper.BaseTest;
 
 import static practice.hw.Calculator.addition;
 
-public class MyTest2Class {
+@Test
+public class MySecondTest
+      //  extends BaseTest
+{
 
     @Test(groups = "group1"
-
             //enabled = false
     )
     public void firstTest() {
