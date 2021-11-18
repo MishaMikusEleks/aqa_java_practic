@@ -1,11 +1,9 @@
-package insta;
+package ui.insta;
 
-import com.automation.remarks.video.annotations.Video;
 import io.qameta.allure.Issue;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import practice.selenium.insta.page_factory.bo.LoginBO;

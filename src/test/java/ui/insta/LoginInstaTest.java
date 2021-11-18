@@ -1,4 +1,4 @@
-package insta;
+package ui.insta;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
