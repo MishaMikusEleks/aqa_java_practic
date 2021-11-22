@@ -10,7 +10,7 @@ public class LoginBO {
     @Step
     public boolean login(String login, String pass) {
         WebDriver driver = Driver.getInstance().getDriver();
-        driver .get("https://www.instagram.com/");
+        driver.get("https://www.instagram.com/");
         LoginPO loginPO= new LoginPO(driver);
         loginPO.inputLogin(login);
         loginPO.inputPassword(pass);

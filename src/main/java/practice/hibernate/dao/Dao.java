@@ -41,7 +41,8 @@ public abstract class Dao<T> {
         return res;
     }
 
-    List<Student> getAll() {
+    List<T> getAll() {
+        //TODO
         return null;
     }
 
@@ -72,12 +73,12 @@ public abstract class Dao<T> {
         return url.split("/")[url.split("/").length-1];
     }
 
-    void update(Student student, String[] params) {
-
+    void update(T object, String[] params) {
+//TODO
     }
 
-    void delete(Student student) {
-
+    void delete(T object) {
+//TODO
     }
 
     public  void closeSession(){

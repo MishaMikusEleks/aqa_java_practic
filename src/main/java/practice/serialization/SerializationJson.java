@@ -8,7 +8,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,8 +16,6 @@ public class SerializationJson {
 
     public static void main(String[] args) throws IOException {
 
-        System.out.println(Arrays.asList(args));
-        System.exit(0);
 
         // json init
         JSONObject json1= new JSONObject();

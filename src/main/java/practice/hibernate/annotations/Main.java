@@ -10,7 +10,7 @@ public class Main {
         address.setCity("Lviv");
         address.setCounty("Ukrainian");
         address.setStreet("Naukova");
-        address.setBuilding_number(13);
+        address.setBuilding_number(17);
         SessionFactory sessionFactory = null;
         try {
             //Get Session

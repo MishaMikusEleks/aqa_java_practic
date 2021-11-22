@@ -1,5 +1,7 @@
 package practice.api;
 
+import org.json.JSONObject;
+
 import java.util.List;
 import java.util.Map;
 
@@ -62,5 +64,11 @@ public class Response {
                 ", headerMap=" + headerMap +
                 ", time=" + time +
                 '}';
+    }
+
+    public JSONObject getBodyAsJson() {
+        JSONObject res=new JSONObject(body);
+
+        return res;
     }
 }
