@@ -1,5 +1,6 @@
 package unit;
 
+import io.restassured.internal.common.assertion.AssertionSupport;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -34,9 +35,15 @@ public class MySecondTest
     }
 
     @Test(dataProvider = "numbersProvider")
-    public void addTest(Integer a,Integer b,Integer expected) {
-        Assert.assertEquals(addition(a + "", b + ""),
-                expected.doubleValue(),"addition error");
+    public void addTest(Integer a,Integer b, Integer expected) {
+
+        double actual=addition(a + "", b + "");
+
+        double expectedDouble=expected.doubleValue();
+
+        Assert.assertEquals(actual,expectedDouble,"addition error");
+
+
     }
 
     @DataProvider

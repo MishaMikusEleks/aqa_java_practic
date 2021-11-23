@@ -7,7 +7,7 @@ import practice.selenium.insta.bo.LoginBO;
 import practice.test_helper.BaseTest;
 
 
-@Test
+
 public class LoginInstaTest extends BaseTest {
 
     @Test
@@ -18,5 +18,7 @@ public class LoginInstaTest extends BaseTest {
 
         Assert.assertTrue(loginBO.login(login,pass));
     }
+
+
 
 }

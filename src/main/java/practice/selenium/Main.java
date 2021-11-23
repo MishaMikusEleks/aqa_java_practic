@@ -28,7 +28,6 @@ public class Main {
        // WebElement fakeElement=driver.findElement(By.xpath("//*[@id=\"qwe\"]"));
 
 
-
         WebElement searchInput=driver.findElement(By.xpath("//*[@id=\"search\"]/div/input"));
         WebElement searchInputParent=driver.findElement(By.id("search"));
 
@@ -47,7 +46,9 @@ public class Main {
 
         Wait wait = new FluentWait(driver)
                 .withTimeout(Duration.ofSeconds(10))
-                .pollingEvery(Duration.ofSeconds(1));
+                .pollingEvery(Duration.ofSeconds(1))
+                //.ignoring(Exception.class)
+        ;
 
         WebElement loginButtonPoll = (WebElement) wait.until((Function<WebDriver, WebElement>) driver1
                 -> driver1.findElement(By.linkText("Log in")));
