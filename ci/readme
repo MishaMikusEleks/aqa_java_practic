@@ -1,10 +1,15 @@
+
 docker build -t myjenkins-blueocean:1.1 .
 
 docker run --name jenkins-blueocean --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:1.1
 
-docker logs jenkins-blueocean
+docker run --name jenkins-blueocean --rm --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:latest-jdk11
 
+docker exec logs jenkins-blueocean
 
+docker exec -ti 7d8b99f1d81aa1e6965b0d269e0c9bc7210f726aa2c900004eb01edd44f8cb28 "ls"
+
+docker exec -it 7d8b99f1d81aa1e6965b0d269e0c9bc7210f726aa2c900004eb01edd44f8cb28 /bin/bash
 
 file="property.file"
 dir="src/main/resources"

@@ -9,7 +9,7 @@ import practice.test_helper.listener.CustomAllureListener;
 
 @Listeners({
        // BaseTestListener.class,
-        UniversalVideoListener.class,
+       // UniversalVideoListener.class,
         CustomAllureListener.class
 })
 public class BaseTest {

@@ -8,7 +8,6 @@ import java.util.Properties;
 
 public class PropertyUtil {
 
-
     private static Map<String, Object> propertyMap ;
     Properties prop = new Properties();
 
@@ -42,4 +41,8 @@ public class PropertyUtil {
         }
     }
 
+    public boolean getBoolean(String key, boolean defaultValue) {
+        if(getProperty(key)==null) return defaultValue;
+        return getProperty(key).toString().equals("true");
+    }
 }

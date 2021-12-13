@@ -6,6 +6,7 @@ import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import practice.PropertyUtil;
 import practice.selenium.insta.page_factory.bo.LoginBO;
 import practice.selenium.parallel_run.BrowserFactory;
 import practice.test_helper.BaseTest;
@@ -16,8 +17,8 @@ public class LoginInstaThreadSafeTest extends BaseTest {
     public static Object[][] browserDataProvider() {
         return new Object[][]{
                 {"chrome"}
-                ,{"firefox"}
-                ,{"chrome"}
+               // ,{"firefox"}
+               // ,{"chrome"}
         };
     }
 
@@ -26,7 +27,9 @@ public class LoginInstaThreadSafeTest extends BaseTest {
     @Test(dataProvider = "browserDataProvider")
     @Severity(SeverityLevel.CRITICAL)
     public void loginTest(String browserName) {
-        BrowserFactory.initDriver(browserName);
+
+        BrowserFactory.initDriver(new PropertyUtil().getProp().getProperty("browser","chrome"));
+
         LoginBO loginBO = new LoginBO();
 
         //Step1

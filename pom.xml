@@ -16,7 +16,7 @@
         <selenium.version>4.0.0</selenium.version>
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
         <maven.surefire>3.0.0-M5</maven.surefire>
-        <aspectj.weaver>1.9.6</aspectj.weaver>
+        <aspectj.version>1.9.8.RC3</aspectj.version>
     </properties>
 
     <dependencies>
@@ -106,6 +106,12 @@
             <version>${testng.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -116,12 +122,11 @@
                 <version>${maven.surefire}</version>
                 <configuration>
                     <argLine>
-                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.weaver}/aspectjweaver-${aspectj.weaver}.jar
+                        -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.weaver}.jar
                     </argLine>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>
         </build>
-
 </project>
