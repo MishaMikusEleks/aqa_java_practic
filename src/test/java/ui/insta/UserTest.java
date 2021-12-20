@@ -16,15 +16,7 @@ import practice.test_helper.BaseTest;
 import java.util.List;
 
 @Test
-public class LoginInstaThreadSafeTest extends BaseTest {
-    @DataProvider(parallel = true)
-    public static Object[][] browserDataProvider() {
-        return new Object[][]{
-                {"chrome"}
-               // ,{"firefox"}
-               // ,{"chrome"}
-        };
-    }
+public class UserTest {
 
     @DataProvider
     public static Object[][] userDataProvider() {
@@ -32,36 +24,24 @@ public class LoginInstaThreadSafeTest extends BaseTest {
         List<Student> list = StudentDao.getInstance().findAll();
 
         Object[][] res=new Object[list.size()][2];
+
         final int[] i = {0};
         list.forEach(s->{
-            res[i[0]++][0]=s.getName();
-            res[i[0]][0]=s.getAddress_id();
+            res[i[0]][0]=s.getName();
+            res[i[0]][1]=s.getAddress_id();
+            i[0]++;
+            System.out.println(s);
         });
 
         return res;
     }
 
-    //@Video
-    @Issue("432")
-    @Test(dataProvider = "browserDataProvider")
-    @Severity(SeverityLevel.CRITICAL)
-    public void loginTest(String browserName) {
-
-        BrowserFactory.initDriver(new PropertyUtil().getProp().getProperty("browser","chrome"));
-
-        LoginBO loginBO = new LoginBO();
-
-        //Step1
-        Assert.assertTrue(loginBO.login(),"login Failed!");
-
-    }
-
 
     @Test(dataProvider = "userDataProvider")
-    public void userTest(String login,String password) {
+    public void userTest(String login,Integer id) {
 
         System.out.println(login);
-        System.out.println(password);
+        System.out.println(id);
 
         System.out.println();
 
